@@ -8,6 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ByteChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Optional;
 
 public class ChannelDemo {
 
@@ -20,6 +23,11 @@ public class ChannelDemo {
         copyData(readChannel, writeChannel);
         readChannel.close();
         writeChannel.close();
+
+
+
+
+
     }
 
     private static void copyData(ReadableByteChannel src, WritableByteChannel dest) throws IOException {
@@ -40,5 +48,7 @@ public class ChannelDemo {
             }
             byteBuffer.clear();
         }
+
+        Files.newInputStream(Paths.get(""));
     }
 }
